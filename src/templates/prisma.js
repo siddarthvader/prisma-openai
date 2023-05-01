@@ -6,6 +6,7 @@ import {
 import { postRequest } from "../helpers/api";
 const readline = require("readline");
 const fs = require("fs");
+const { inspect } = require("util");
 
 import dotenv from "dotenv";
 
@@ -19,15 +20,19 @@ export default function generatePrismaTemplate(prompt) {
   //   console.log(JSON.stringify(body, null, 2));
 
   postRequest(URL, headers, body).then((data) => {
-    console.log(JSON.stringify(data, null, 2));
+    // console.log(JSON.stringify(data, null, 2));
 
     const match = data.choices[0].message.content;
     if (match) {
-      console.log(JSON.stringify(match, null, 2));
+      // console.log(JSON.stringify(match, null, 2));
       const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
       });
+
+      const output = match.replace(/\\n/g, "\n");
+
+      console.log(output);
 
       rl.question("Enter name of .prisma file: ", (schemaName) => {
         console.log(`Generating schema for ${schemaName}`);
