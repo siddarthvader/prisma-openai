@@ -1,4 +1,8 @@
-import { OpenAIConfig, PrismaPromptPostfix } from "../Constants";
+import {
+  GenerateLocation,
+  OpenAIConfig,
+  PrismaPromptPostfix,
+} from "../Constants";
 import { postRequest } from "../helpers/api";
 const readline = require("readline");
 const fs = require("fs");
@@ -23,7 +27,7 @@ export default function generatePrismaTemplate(prompt) {
 
       rl.question("Enter name of .prisma file: ", (schemaName) => {
         console.log(`Generating schema for ${schemaName}`);
-        const fileName = `${schemaName}.prisma`;
+        const fileName = `${GenerateLocation.folder}/${schemaName}.prisma`;
 
         fs.writeFile(fileName, match, (err) => {
           if (err) throw err;
