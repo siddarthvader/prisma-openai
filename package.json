@@ -23,6 +23,7 @@
     "chalk": "^5.2.0",
     "commander": "^10.0.1",
     "conf": "^11.0.1",
+    "dotenv": "^16.0.3",
     "esm": "^3.2.25",
     "fs": "0.0.1-security",
     "inquirer": "^9.2.0",

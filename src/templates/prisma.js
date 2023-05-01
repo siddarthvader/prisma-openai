@@ -47,7 +47,7 @@ export default function generatePrismaTemplate(prompt) {
 function generateHeaders(apiKey) {
   const headers = {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${apiKey}`,
+    Authorization: `Bearer ${process.env.OPEN_API_KEY}`,
   };
 
   return headers;
