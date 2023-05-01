@@ -7,6 +7,10 @@ import { postRequest } from "../helpers/api";
 const readline = require("readline");
 const fs = require("fs");
 
+import dotenv from "dotenv";
+
+dotenv.config();
+
 export default function generatePrismaTemplate(prompt) {
   const headers = generateHeaders(OpenAIConfig.OPEN_API_KEY);
   const body = generateBody(genratePrompts(prompt, PrismaPromptPostfix));
@@ -44,7 +48,7 @@ export default function generatePrismaTemplate(prompt) {
   });
 }
 
-function generateHeaders(apiKey) {
+function generateHeaders() {
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${process.env.OPEN_API_KEY}`,
