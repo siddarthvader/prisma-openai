@@ -34,3 +34,5 @@ node_modules/
 .parcel-cache
 
 pnpm-lock.yaml
+
+generated/
