@@ -1,0 +1,26 @@
+{
+  "name": "@siddarthvader/create-prisma-openai",
+  "version": "1.0.0",
+  "description": "cli tool to generate prisma schema using openai",
+  "bin": {
+    "@siddarthvader/create-prisma-openai": "bin/create-cli",
+    "create-prisma-openai": "bin/create-cli"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "prisma",
+    "openai",
+    "cli"
+  ],
+  "author": "Siddharth",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.1",
+    "conf": "^11.0.1",
+    "esm": "^3.2.25"
+  }
+}
